@@ -19,7 +19,7 @@ macro(setup_project name dir)
 	target_link_libraries(
 		${name}
 		PRIVATE
-		MDELib Mw
+		MDECore Mw
 	)
 
 	install(
