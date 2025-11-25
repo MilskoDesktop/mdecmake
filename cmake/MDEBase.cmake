@@ -1,3 +1,4 @@
+include_guard(DIRECTORY)
 include(GNUInstallDirs)
 
 macro(setup_project name dir)
@@ -26,4 +27,14 @@ macro(setup_project name dir)
 		TARGETS ${name}
 		DESTINATION ${dir}
 	)
+endmacro()
+
+macro(math_add name)
+	if(NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
+		target_link_libraries(
+			${name}
+			PRIVATE
+			m
+		)
+	endif()
 endmacro()

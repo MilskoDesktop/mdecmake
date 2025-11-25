@@ -1,3 +1,4 @@
+include_guard(DIRECTORY)
 find_package(PkgConfig)
 
 macro(pkg_config_add dest name)
